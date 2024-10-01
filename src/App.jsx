@@ -8,14 +8,13 @@ import Header from "./components/Header";
 <Header />
 
 function App() {
-
-  const [selectedTopic, setSelectedTopic] = useState('components')
+  const [selectedTopic, setSelectedTopic] = useState()
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
   }
   return (
     <div>
-      <Header /> 
+      <Header />
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
@@ -35,11 +34,14 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          <div id="tab-content">
-           <h3>{EXAMPLES[selectedTopic].title}</h3>
-           <p>{EXAMPLES[selectedTopic].description}</p>
-           <code>{EXAMPLES[selectedTopic].code}</code>
-          </div>
+          {!selectedTopic ? (<p>Please Select a Button</p>
+          ) : (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </div>
+          )}
         </section>
       </main>
 
