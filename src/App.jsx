@@ -6,7 +6,6 @@ import Examples from "./components/Examples";
 <Header />
 
 function App() {
-
   return (
     <div>
       <Header />
@@ -14,8 +13,6 @@ function App() {
         <CoreConcepts />
         <Examples />
       </main>
-
-
     </div>
   );
 }
