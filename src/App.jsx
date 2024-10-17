@@ -5,6 +5,7 @@ import Examples from "./components/Examples";
 
 <Header />
 function App() {
+
   return (
     <div>
       <Header />
@@ -14,6 +15,7 @@ function App() {
       </main>
     </div>
   );
+  
 }
 
 export default App;
